@@ -1,0 +1,42 @@
+_repo: A-Forgotten-Empire-Vijayanagar-A-Contribution-to-the-History-of-India_3310
+creator:
+  authors:
+  - agent_name: Sewell, Robert
+    alias: Sewell, R. (Robert)
+    birthdate: 1845
+    deathdate: 1925
+    gutenberg_agent_id: '1166'
+    url: http://www.gutenberg.org/2009/agents/1166
+  - agent_name: Nunes, Fernão, active 16th century
+    aliases:
+    - Nunes, Fernao
+    - Nuniz, Fernão
+    gutenberg_agent_id: '1167'
+    url: http://www.gutenberg.org/2009/agents/1167
+  - agent_name: Paes, Domingos, active 16th century
+    gutenberg_agent_id: '1168'
+    url: http://www.gutenberg.org/2009/agents/1168
+description: The empire of Vijayanagar flourished between 1336 and 1565 and represented
+  the grandest achievement of Brahmanism. The great Madhavacharya was probably its
+  founder, his uterine brother Sayancharya was its greatest minister. Vijaynagar had
+  its days of barbaric splendour, wealth and luxury reminding us of the declining
+  glory of Rome, when Rajas and nobles kept many hundreds of women in their harems
+  and many more to attend on them, when palaces were literally paved with gold and
+  jewels, when temples and their priests revealed in the immensity of their ill-gotten
+  wealth, in the dazzling magnificence of their festivals and the fleeting charms
+  of dancing girls, and gorgeous monuments of architecture rose out of the sweat of
+  slaves and prisoners of war.
+gutenberg_bookshelf: India
+gutenberg_issued: '2002-07-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '3310'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Vijayanagar (Empire) -- History'
+- !lcc 'DS'
+title: 'A Forgotten Empire (Vijayanagar): A Contribution to the History of India'
+url: http://www.gutenberg.org/ebooks/3310
