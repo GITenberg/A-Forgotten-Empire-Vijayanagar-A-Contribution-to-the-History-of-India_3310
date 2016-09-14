@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: JPJqRN8ktQktxt+ggwziq3jet3o4MqRXgh30ddKCBIGuhSW05DJNRPby910KWFTSHOK7KRNz80yQUGIrNeG3msy6zNy1WcRgABt2Gxrm2TcQAcmS2+FChpKssqslW386vM6VKd5D4Yf8hGNeFR0+OAqOY0CdPHOvEAyMDR1TAt62fpqR3p+QgpY8qE5vtV1+NnQxkg8KguQUZ0jBxdpIIycwNMMpAr+exA5TcYjRpWwDIwrRmlwLdLo1zgIrLG2DVx0OvmNjQwZ0Q4TaWKkpvDX0XWL2S2nh/uFedkPpWmvd1aW7YTPy4qeUph2vaISF5/Ck6dBxDP3iWAtzifmvhh2C9KcEe4K7qDhKE5PyzR8oPHM4d54GaGkXE1u+IQ1laNnVbs4aYsYbed3qgTMVtDZvvetO3UhXPNSDUToAT+7lbA4OLgPDE5vNkqvuOzvnD9m/GnwiLNJvXHsjeviqgPE11XMqQKHsqzIRIB2F55lRJa6oseJPZc5+vFmFX2sAbXH35FHc0QEg818GpgDm4PPDtfLrzQLkOQOZbl4f0DAo6X47jXxYWc+HGET2AIP7oAEZ9l9dNlNCQptNym+Kqpz38e0HWJUFc5nLLsZUvPRmKrhYNgigdYI5zZQv/RGgxigBl7AsAHlInsMbIgPKiT08qOVzdytlejg4nj7ZB6M=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/A-Forgotten-Empire-Vijayanagar-A-Contribution-to-the-History-of-India_3310
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
