@@ -1,5 +1,8 @@
 _repo: A-Forgotten-Empire-Vijayanagar-A-Contribution-to-the-History-of-India_3310
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   authors:
   - agent_name: Sewell, Robert
@@ -27,6 +30,8 @@ description: The empire of Vijayanagar flourished between 1336 and 1565 and repr
   wealth, in the dazzling magnificence of their festivals and the fleeting charms
   of dancing girls, and gorgeous monuments of architecture rose out of the sweat of
   slaves and prisoners of war.
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/3310#A-Forgotten-Empire-Vijayanagar-A-Contribution-to-the-History-of-India
 gutenberg_bookshelf: India
 gutenberg_issued: '2002-07-01'
 gutenberg_type: Text
